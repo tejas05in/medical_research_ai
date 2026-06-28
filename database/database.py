@@ -529,6 +529,14 @@ class ResearchDatabase:
         self.close()
         return False
 
+    def clear_all(self) -> None:
+        """Delete all rows from papers, evidence, and search_history tables."""
+        cursor = self.connection.cursor()
+        cursor.execute("DELETE FROM evidence")
+        cursor.execute("DELETE FROM papers")
+        cursor.execute("DELETE FROM search_history")
+        self.connection.commit()
+
     def close(self):
 
         self.connection.close()

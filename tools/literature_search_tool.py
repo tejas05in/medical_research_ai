@@ -3,6 +3,10 @@ from pydantic import BaseModel, Field
 from typing import Type
 
 from services.literature_engine import LiteratureSearchEngine
+from services.pubmed_client import PubMedClient
+from services.europepmc_client import EuropePMCClient
+from services.openalex_client import OpenAlexClient
+from services.crossref_client import CrossRefClient
 from database import ResearchDatabase
 from utils.exporters import PaperExporter
 from utils.logger import logger

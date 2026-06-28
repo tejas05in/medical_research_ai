@@ -105,3 +105,223 @@
 2026-06-28 16:44:15,332 INFO CrossRef returned 5 papers
 2026-06-28 16:44:15,370 INFO Searching PubMed: xyzzy123456789nonsensetermthatmatchesnothing
 2026-06-28 16:44:15,781 INFO Retrieved 0 PMIDs
+2026-06-28 17:19:55,110 INFO Evidence extraction starting: 10 pending | 13 already extracted
+2026-06-28 17:19:55,110 INFO [1/10] Extracting evidence for paper_id=6 — Gut Microbiota and Diabetic Complications: Potential Mechani...
+2026-06-28 17:19:55,110 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:19:56,757 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:19:56,775 INFO [1/10] Stored evidence for paper_id=6
+2026-06-28 17:19:58,277 INFO [2/10] Extracting evidence for paper_id=7 — Implementation of artificial intelligence in healthcare in A...
+2026-06-28 17:19:58,277 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:19:59,815 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:19:59,836 INFO [2/10] Stored evidence for paper_id=7
+2026-06-28 17:20:01,345 INFO [3/10] Extracting evidence for paper_id=8 — MultiRetNet: A Lightweight Explainable AI Approach to Diabet...
+2026-06-28 17:20:01,345 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:03,070 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:03,085 INFO [3/10] Stored evidence for paper_id=8
+2026-06-28 17:20:04,588 INFO [4/10] Extracting evidence for paper_id=9 — Smartphone-based offline AI for multi-disease retinal screen...
+2026-06-28 17:20:04,588 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:06,525 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:06,543 INFO [4/10] Stored evidence for paper_id=9
+2026-06-28 17:20:08,045 INFO [5/10] Extracting evidence for paper_id=10 — Validation of Deep Convolutional Neural Network-based algori...
+2026-06-28 17:20:08,045 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:09,763 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:09,782 INFO [5/10] Stored evidence for paper_id=10
+2026-06-28 17:20:11,283 INFO [6/10] Extracting evidence for paper_id=11 — Accuracy of portable artificial intelligence-supported fundu...
+2026-06-28 17:20:11,283 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:12,992 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:13,011 INFO [6/10] Stored evidence for paper_id=11
+2026-06-28 17:20:14,515 INFO [7/10] Extracting evidence for paper_id=12 — REAL-WORLD PRACTICE OF ARTIFICIAL INTELLIGENCE DIAGNOSTIC SY...
+2026-06-28 17:20:14,515 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:16,428 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:16,447 INFO [7/10] Stored evidence for paper_id=12
+2026-06-28 17:20:17,949 INFO [8/10] Extracting evidence for paper_id=13 — [Artificial intelligence in diabetic retinopathy screening]...
+2026-06-28 17:20:17,949 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:19,670 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:19,685 INFO [8/10] Stored evidence for paper_id=13
+2026-06-28 17:20:21,194 INFO [9/10] Extracting evidence for paper_id=14 — Artificial intelligence for diabetic retinopathy screening: ...
+2026-06-28 17:20:21,194 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:22,340 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:22,350 INFO [9/10] Stored evidence for paper_id=14
+2026-06-28 17:20:23,850 INFO [10/10] Extracting evidence for paper_id=15 — Automated diabetic retinopathy detection in smartphone-based...
+2026-06-28 17:20:23,850 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:25,498 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:25,519 INFO [10/10] Stored evidence for paper_id=15
+2026-06-28 17:20:25,618 INFO OpenAI: Successfully validated tool 'evidence_extraction_tool'
+2026-06-28 17:20:28,876 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 17:20:28,919 INFO Evidence extraction starting: 8 pending | 15 already extracted
+2026-06-28 17:20:28,919 INFO [1/8] Extracting evidence for paper_id=16 — Artificial intelligence using deep learning to screen for re...
+2026-06-28 17:20:28,919 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:31,108 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:31,120 INFO [1/8] Stored evidence for paper_id=16
+2026-06-28 17:20:32,629 INFO [2/8] Extracting evidence for paper_id=17 — Strategies to Tackle the Global Burden of Diabetic Retinopat...
+2026-06-28 17:20:32,629 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:34,242 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:34,273 INFO [2/8] Stored evidence for paper_id=17
+2026-06-28 17:20:35,775 INFO [3/8] Extracting evidence for paper_id=18 — Artificial Intelligence With Deep Learning Technology Looks ...
+2026-06-28 17:20:35,776 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:36,932 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:36,947 INFO [3/8] Stored evidence for paper_id=18
+2026-06-28 17:20:38,452 INFO [4/8] Extracting evidence for paper_id=19 — Artificial Intelligence in Diabetic Retinopathy...
+2026-06-28 17:20:38,452 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:39,508 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:39,523 INFO [4/8] Stored evidence for paper_id=19
+2026-06-28 17:20:41,025 INFO [5/8] Extracting evidence for paper_id=20 — Artificial Intelligence in Diabetic Retinopathy...
+2026-06-28 17:20:41,025 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:42,151 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:42,182 INFO [5/8] Stored evidence for paper_id=20
+2026-06-28 17:20:43,684 INFO [6/8] Extracting evidence for paper_id=21 — Role of Artificial Intelligence in mode of Diabetic Retinopa...
+2026-06-28 17:20:43,684 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:44,841 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:44,854 INFO [6/8] Stored evidence for paper_id=21
+2026-06-28 17:20:46,363 INFO [7/8] Extracting evidence for paper_id=22 — Artificial Intelligence in Diabetic Retinopathy: A Review...
+2026-06-28 17:20:46,363 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:47,522 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-06-28 17:20:47,529 INFO [7/8] Stored evidence for paper_id=22
+2026-06-28 17:20:49,037 INFO [8/8] Extracting evidence for paper_id=23 — Diabetic Retinopathy Screening with Artificial Intelligence:...
+2026-06-28 17:20:49,037 INFO AFC is enabled with max remote calls: 10.
+2026-06-28 17:20:49,195 INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-06-28 17:20:49,195 ERROR [8/8] Failed paper_id=23: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\nPlease retry in 11.504916852s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.1-flash-lite', 'location': 'global'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}
+2026-06-28 17:20:49,222 INFO OpenAI: Successfully validated tool 'evidence_extraction_tool'
+2026-06-28 17:20:50,919 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 17:20:50,925 INFO OpenAI API usage: {'prompt_tokens': 410, 'completion_tokens': 68, 'total_tokens': 478, 'cached_prompt_tokens': 0, 'reasoning_tokens': 0}
+2026-06-28 18:24:01,448 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:24:04,978 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 18:24:05,053 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 18:24:05,053 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 18:24:05,053 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 18:24:06,403 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:24:06,429 INFO Querying PubMed for: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:06,429 INFO Searching PubMed: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:07,186 INFO Retrieved 20 PMIDs
+2026-06-28 18:24:09,472 INFO PubMed returned 20 papers
+2026-06-28 18:24:09,472 INFO Querying EuropePMC for: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:09,472 INFO Searching Europe PMC: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:10,393 INFO Europe PMC returned 0 papers
+2026-06-28 18:24:10,394 INFO EuropePMC returned 0 papers
+2026-06-28 18:24:10,394 INFO Querying OpenAlex for: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:10,394 INFO Searching OpenAlex: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:10,915 INFO OpenAlex returned 0 papers
+2026-06-28 18:24:10,915 INFO OpenAlex returned 0 papers
+2026-06-28 18:24:10,915 INFO Querying CrossRef for: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:10,915 INFO Searching CrossRef: Artificial intelligence in Diabetes Management AND "India"[Affiliation] AND (2021:2026[PDAT])
+2026-06-28 18:24:13,256 INFO CrossRef returned 20 papers
+2026-06-28 18:24:13,256 INFO CrossRef returned 20 papers
+2026-06-28 18:24:13,529 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 18:24:13,529 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 18:24:13,529 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 18:24:15,012 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:24:15,028 INFO OpenAI API usage: {'prompt_tokens': 757, 'completion_tokens': 61, 'total_tokens': 818, 'cached_prompt_tokens': 0, 'reasoning_tokens': 0}
+2026-06-28 18:24:16,159 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:24:16,772 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 18:24:18,053 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:24:18,068 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:24:18,102 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:24:18,117 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:52:44,260 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:52:46,639 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 18:52:49,599 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:52:49,603 INFO OpenAI API usage: {'prompt_tokens': 212, 'completion_tokens': 100, 'total_tokens': 312, 'cached_prompt_tokens': 0, 'reasoning_tokens': 0}
+2026-06-28 18:52:51,069 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:52:51,075 INFO OpenAI API usage: {'prompt_tokens': 212, 'completion_tokens': 82, 'total_tokens': 294, 'cached_prompt_tokens': 0, 'reasoning_tokens': 0}
+2026-06-28 18:52:51,212 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 18:52:51,213 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 18:52:51,213 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 18:52:52,450 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:52:52,481 INFO Querying PubMed for: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:52:52,481 INFO Searching PubMed: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:52:53,070 INFO Retrieved 1 PMIDs
+2026-06-28 18:52:53,527 INFO PubMed returned 1 papers
+2026-06-28 18:52:53,527 INFO Querying EuropePMC for: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:52:53,527 INFO Searching Europe PMC: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:53:00,095 INFO Europe PMC returned 0 papers
+2026-06-28 18:53:00,102 INFO EuropePMC returned 0 papers
+2026-06-28 18:53:00,102 INFO Querying OpenAlex for: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:53:00,102 INFO Searching OpenAlex: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:53:01,392 INFO OpenAlex returned 0 papers
+2026-06-28 18:53:01,392 INFO OpenAlex returned 0 papers
+2026-06-28 18:53:01,392 INFO Querying CrossRef for: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:53:01,392 INFO Searching CrossRef: transgender problem awareness AND "India"[Affiliation] AND (2024:2026[PDAT])
+2026-06-28 18:53:04,119 INFO CrossRef returned 10 papers
+2026-06-28 18:53:04,123 INFO CrossRef returned 10 papers
+2026-06-28 18:53:04,268 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 18:53:04,268 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 18:53:04,268 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 18:53:06,219 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:53:06,220 INFO OpenAI API usage: {'prompt_tokens': 1114, 'completion_tokens': 60, 'total_tokens': 1174, 'cached_prompt_tokens': 1024, 'reasoning_tokens': 0}
+2026-06-28 18:53:07,854 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:53:09,220 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 18:53:10,470 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:53:10,609 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:53:10,834 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 18:53:11,344 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:15,188 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:15,928 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 19:01:16,085 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 19:01:16,085 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 19:01:16,085 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 19:01:17,328 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:17,362 INFO Querying PubMed for: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:17,362 INFO Searching PubMed: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:18,456 INFO Retrieved 5 PMIDs
+2026-06-28 19:01:19,202 INFO PubMed returned 5 papers
+2026-06-28 19:01:19,202 INFO Querying EuropePMC for: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:19,202 INFO Searching Europe PMC: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:19,911 INFO Europe PMC returned 1 papers
+2026-06-28 19:01:19,912 INFO EuropePMC returned 1 papers
+2026-06-28 19:01:19,912 INFO Querying OpenAlex for: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:19,912 INFO Searching OpenAlex: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:21,446 INFO OpenAlex returned 0 papers
+2026-06-28 19:01:21,446 INFO OpenAlex returned 0 papers
+2026-06-28 19:01:21,446 INFO Querying CrossRef for: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:21,446 INFO Searching CrossRef: Artificial intelligence in Medical education AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:01:23,939 INFO CrossRef returned 5 papers
+2026-06-28 19:01:23,939 INFO CrossRef returned 5 papers
+2026-06-28 19:01:24,096 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 19:01:24,101 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 19:01:24,101 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 19:01:25,405 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:25,405 INFO OpenAI API usage: {'prompt_tokens': 1213, 'completion_tokens': 113, 'total_tokens': 1326, 'cached_prompt_tokens': 1024, 'reasoning_tokens': 0}
+2026-06-28 19:01:26,599 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:27,723 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 19:01:29,222 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:29,249 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:29,328 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:29,482 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:30,295 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:31,116 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:31,283 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:01:40,857 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:09:53,648 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:09:55,189 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 19:09:55,522 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 19:09:55,522 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 19:09:55,522 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 19:10:19,022 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:10:19,036 INFO Querying PubMed for: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:19,036 INFO Searching PubMed: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:20,175 INFO Retrieved 5 PMIDs
+2026-06-28 19:10:21,564 INFO PubMed returned 5 papers
+2026-06-28 19:10:21,564 INFO Querying EuropePMC for: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:21,564 INFO Searching Europe PMC: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:22,466 INFO Europe PMC returned 0 papers
+2026-06-28 19:10:22,466 INFO EuropePMC returned 0 papers
+2026-06-28 19:10:22,466 INFO Querying OpenAlex for: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:22,466 INFO Searching OpenAlex: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:23,764 INFO OpenAlex returned 0 papers
+2026-06-28 19:10:23,764 INFO OpenAlex returned 0 papers
+2026-06-28 19:10:23,764 INFO Querying CrossRef for: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:23,764 INFO Searching CrossRef: diabetes in pregnancy AND "India"[Affiliation] AND (2025:2026[PDAT])
+2026-06-28 19:10:26,612 INFO CrossRef returned 5 papers
+2026-06-28 19:10:26,612 INFO CrossRef returned 5 papers
+2026-06-28 19:10:26,751 INFO OpenAI: Successfully validated tool 'literature_search_tool'
+2026-06-28 19:10:26,751 INFO OpenAI: Successfully validated tool 'search_memory'
+2026-06-28 19:10:26,751 INFO OpenAI: Successfully validated tool 'save_to_memory'
+2026-06-28 19:10:28,320 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:10:28,327 INFO OpenAI API usage: {'prompt_tokens': 1248, 'completion_tokens': 58, 'total_tokens': 1306, 'cached_prompt_tokens': 1152, 'reasoning_tokens': 0}
+2026-06-28 19:10:29,700 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:10:30,843 INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-28 19:10:32,258 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:10:32,264 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:10:32,486 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:10:32,486 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:10:32,772 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

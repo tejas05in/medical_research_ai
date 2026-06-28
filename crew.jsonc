@@ -13,7 +13,7 @@
 
       // What the task should accomplish
       // Use {placeholder} inputs here; crewai run prompts for missing values
-      "description": "Use the Literature Search Tool to search PubMed for the research topic: {research_topic}\n\nRetrieve up to 20 peer-reviewed papers.\n\nAfter the search is complete, report:\n\n- Number of papers retrieved\n- Location of the CSV file\n- Location of the Markdown file\n- Location of the JSON file\n\nDo not invent references. Use only information returned by the tool.",
+      "description": "Use the Literature Search Tool to search PubMed for the research topic: {research_topic}\n\nRetrieve up to {max_results} peer-reviewed papers.\n\nAfter the search is complete, report:\n\n- Number of papers retrieved\n- Location of the CSV file\n- Location of the Markdown file\n- Location of the JSON file\n\nDo not invent references. Use only information returned by the tool.",
 
       // Clear definition of what the output should look like
       "expected_output": "A structured literature search report in Markdown containing a table with the following columns:PMID | DOI | Title | Authors | Journal | Year | AbstractThe report should include all retrieved articles and be suitable for exporting to CSV or Excel.",

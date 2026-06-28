@@ -1,0 +1,41 @@
+{
+  // Display name for this crew
+  "name": "evidence_extraction_crew",
+
+  // Agents to include — each must have a matching agents/<name>.jsonc file
+  "agents": ["evidence_extraction_spec"],
+
+  // Tasks — executed sequentially
+  "tasks": [
+    {
+      // Task identifier
+      "name": "extract_evidence_from_papers",
+
+      // What the task should accomplish.
+      // {max_papers}: pass 10 for rate-limit-safe testing, -1 for full run.
+      // {delay_seconds}: pause between LLM calls (default 1.5 s).
+      "description": "Use the Evidence Extraction Tool to extract structured clinical evidence from biomedical papers stored in the research database.\n\nCall the tool with:\n  max_papers={max_papers}\n  delay_seconds={delay_seconds}\n\nThe tool will automatically skip papers that already have evidence stored.\n\nAfter the tool completes, report:\n- Number of papers processed\n- Number skipped (already extracted)\n- Number failed\n- Paths to the exported CSV, Markdown, and JSON files",
+
+      // Clear definition of what the output should look like
+      "expected_output": "A plain-text extraction summary containing:\n1. Papers processed count\n2. Papers skipped count\n3. Papers failed count (with IDs if any)\n4. Full file paths for the exported CSV, Markdown, and JSON evidence files",
+
+      // Which agent handles this task
+      "agent": "evidence_extraction_spec"
+    }
+  ],
+
+  // Execution process
+  "process": "sequential",
+
+  // Enable verbose logging during execution
+  "verbose": true,
+
+  // Disable crew-level memory (evidence extraction is stateless per run)
+  "memory": false
+
+  // Advanced crew options:
+  // Docs: https://docs.crewai.com/concepts/crews
+  // "max_rpm": null,
+  // "cache": true,
+  // "output_log_file": "evidence_crew.log"
+}
