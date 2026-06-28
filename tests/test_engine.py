@@ -6,11 +6,11 @@ engine = LiteratureSearchEngine()
 
 db = ResearchDatabase()
 
-papers = engine.search("machine learning diabetic retinopathy", max_results=10)
+papers = engine.search("machine learning diabetic retinopathy", max_results=5)
 
 db.log_search(
     query="machine learning diabetic retinopathy",
-    database_name="PubMed",
+    source="PubMed",
     number_of_results=len(papers),
 )
 

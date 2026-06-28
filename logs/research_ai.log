@@ -26,3 +26,14 @@
 2026-06-28 01:19:21,049 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-06-28 01:19:21,291 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-06-28 01:19:21,344 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:22:38,870 INFO Using config path: C:\Users\tejas\.config\crewai\settings.json
+2026-06-28 01:22:45,290 INFO HTTP Request: POST https://app.crewai.com/crewai_plus/api/v1/crews/zip "HTTP/1.1 201 Created"
+2026-06-28 01:22:46,343 INFO HTTP Request: GET https://app.crewai.com/crewai_plus/api/v1/crews/957f629b-cd82-4d23-b79d-23dd18849cd0/status "HTTP/1.1 200 OK"
+2026-06-28 02:16:03,505 INFO Searching PubMed: machine learning diabetic retinopathy
+2026-06-28 02:16:04,967 INFO Retrieved 10 PMIDs
+2026-06-28 13:36:25,661 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 13:36:26,733 INFO Retrieved 10 PMIDs
+2026-06-28 13:37:11,122 INFO Searching PubMed: machine learning diabetic retinopathy
+2026-06-28 13:37:11,667 INFO Retrieved 5 PMIDs
+2026-06-28 13:40:36,999 INFO Searching PubMed: machine learning diabetic retinopathy
+2026-06-28 13:40:38,232 INFO Retrieved 5 PMIDs

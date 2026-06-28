@@ -1,30 +1,57 @@
-from dataclasses import dataclass, asdict
-from typing import List, Optional
+from dataclasses import dataclass, field, asdict
+from typing import Optional
 
 
 @dataclass
 class Paper:
+    """
+    Represents a biomedical publication from any literature source.
 
-    pmid: str
-    doi: Optional[str]
+    Examples of sources:
+    - PubMed
+    - Europe PMC
+    - OpenAlex
+    - CrossRef
+    - Scopus
+    - Embase
+    """
 
-    title: str
+    # Internal database ID
+    id: Optional[int] = None
 
-    authors: List[str]
+    # Literature source
+    source: str = "PubMed"
 
-    journal: str
+    # ID assigned by that source
+    source_id: Optional[str] = None
 
-    year: str
+    # Biomedical identifiers
+    pmid: Optional[str] = None
+    doi: Optional[str] = None
 
-    abstract: str
+    # Bibliographic metadata
+    title: str = ""
 
-    keywords: List[str] = None
+    authors: list[str] = field(default_factory=list)
 
-    mesh_terms: List[str] = None
+    journal: str = ""
 
-    publication_types: List[str] = None
+    year: str = ""
+
+    abstract: str = ""
+
+    # Metadata
+    keywords: list[str] = field(default_factory=list)
+
+    mesh_terms: list[str] = field(default_factory=list)
+
+    publication_types: list[str] = field(default_factory=list)
 
     language: str = "English"
+
+    url: Optional[str] = None
+
+    retrieved_at: Optional[str] = None
 
     def to_dict(self):
         return asdict(self)
@@ -32,3 +59,6 @@ class Paper:
     @property
     def author_string(self):
         return ", ".join(self.authors)
+
+    def __str__(self):
+        return f"[{self.source}] " f"{self.title} " f"({self.year})"
