@@ -82,24 +82,33 @@ class EvidenceExtractor:
             schema=Evidence,
         )
 
-        evidence.paper_id = paper_id
-
-        evidence.llm_provider = os.getenv(
-            "LLM_PROVIDER",
-            "unknown",
-        )
-
-        evidence.llm_model = os.getenv(
-            "GEMINI_MODEL",
-            os.getenv(
-                "OPENAI_MODEL",
-                "unknown",
-            ),
-        )
-
+        # Capture raw LLM output before adding provenance metadata
         evidence.raw_json = json.dumps(
-            evidence.model_dump(),
+            evidence.model_dump(
+                exclude={
+                    "id",
+                    "paper_id",
+                    "llm_provider",
+                    "llm_model",
+                    "extraction_prompt_version",
+                    "raw_json",
+                    "extracted_at",
+                }
+            ),
             indent=2,
         )
+
+        evidence.paper_id = paper_id
+
+        provider = os.getenv("LLM_PROVIDER", "gemini").lower()
+
+        evidence.llm_provider = provider
+
+        if provider == "openai":
+            evidence.llm_model = os.getenv("OPENAI_MODEL", "unknown")
+        elif provider == "gemini":
+            evidence.llm_model = os.getenv("GEMINI_MODEL", "unknown")
+        else:
+            evidence.llm_model = "unknown"
 
         return evidence

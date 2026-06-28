@@ -5,15 +5,15 @@ db = ResearchDatabase()
 
 extractor = EvidenceExtractor()
 
-paper = db.get_all_paper_objects()[0]
+paper = db.get_all_papers()[0]
 
 print("Extracting evidence...")
 
-evidence = extractor.extract(paper)
+evidence = extractor.extract(paper, paper.id)
 
 db.insert_evidence(evidence)
 
-loaded = db.get_evidence(paper.pmid)
+loaded = db.get_evidence(paper.id)
 
 print()
 

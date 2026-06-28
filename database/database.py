@@ -291,19 +291,7 @@ class ResearchDatabase:
 
         return None
 
-    def get_paper(self, paper_id):
-
-        cursor = self.connection.cursor()
-
-        cursor.execute(
-            "SELECT * FROM papers WHERE id=?",
-            (paper_id,),
-        )
-
-        row = cursor.fetchone()
-
-        if row is None:
-            return None
+    def _row_to_paper(self, row) -> Paper:
 
         return Paper(
             id=row["id"],
@@ -326,13 +314,59 @@ class ResearchDatabase:
             retrieved_at=row["retrieved_at"],
         )
 
+    def _row_to_evidence(self, row) -> Evidence:
+
+        return Evidence(
+            id=row["id"],
+            paper_id=row["paper_id"],
+            study_design=row["study_design"],
+            population=row["population"],
+            sample_size=row["sample_size"],
+            country=row["country"],
+            intervention=row["intervention"],
+            comparator=row["comparator"],
+            primary_outcomes=(
+                json.loads(row["primary_outcomes"]) if row["primary_outcomes"] else []
+            ),
+            secondary_outcomes=(
+                json.loads(row["secondary_outcomes"])
+                if row["secondary_outcomes"]
+                else []
+            ),
+            key_findings=json.loads(row["key_findings"]) if row["key_findings"] else [],
+            limitations=json.loads(row["limitations"]) if row["limitations"] else [],
+            conclusion=row["conclusion"],
+            risk_of_bias=row["risk_of_bias"],
+            llm_provider=row["llm_provider"],
+            llm_model=row["llm_model"],
+            extraction_prompt_version=row["extraction_prompt_version"] or "v1",
+            raw_json=row["raw_json"],
+            extracted_at=row["extracted_at"],
+        )
+
+    def get_paper(self, paper_id):
+
+        cursor = self.connection.cursor()
+
+        cursor.execute(
+            "SELECT * FROM papers WHERE id=?",
+            (paper_id,),
+        )
+
+        row = cursor.fetchone()
+
+        if row is None:
+            return None
+
+        return self._row_to_paper(row)
+
     def get_all_papers(self):
 
         cursor = self.connection.cursor()
 
-        cursor.execute("SELECT id FROM papers")
+        cursor.execute("SELECT * FROM papers")
 
-        return [self.get_paper(r["id"]) for r in cursor.fetchall()]
+        return [self._row_to_paper(row) for row in cursor.fetchall()]
 
     # ==========================================================
     # EVIDENCE METHODS
@@ -348,6 +382,30 @@ class ResearchDatabase:
         )
 
         return cursor.fetchone() is not None
+
+    def get_evidence(self, paper_id: int):
+
+        cursor = self.connection.cursor()
+
+        cursor.execute(
+            "SELECT * FROM evidence WHERE paper_id=?",
+            (paper_id,),
+        )
+
+        row = cursor.fetchone()
+
+        if row is None:
+            return None
+
+        return self._row_to_evidence(row)
+
+    def get_all_evidence(self):
+
+        cursor = self.connection.cursor()
+
+        cursor.execute("SELECT * FROM evidence")
+
+        return [self._row_to_evidence(row) for row in cursor.fetchall()]
 
     def insert_evidence(self, evidence: Evidence):
 
@@ -463,6 +521,13 @@ class ResearchDatabase:
     # ==========================================================
     # CLEANUP
     # ==========================================================
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+        return False
 
     def close(self):
 

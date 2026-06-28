@@ -37,3 +37,71 @@
 2026-06-28 13:37:11,667 INFO Retrieved 5 PMIDs
 2026-06-28 13:40:36,999 INFO Searching PubMed: machine learning diabetic retinopathy
 2026-06-28 13:40:38,232 INFO Retrieved 5 PMIDs
+2026-06-28 16:14:40,601 INFO Querying PubMed for: machine learning diabetic retinopathy
+2026-06-28 16:14:40,601 INFO Searching PubMed: machine learning diabetic retinopathy
+2026-06-28 16:14:41,929 INFO Retrieved 5 PMIDs
+2026-06-28 16:14:43,167 INFO PubMed returned 5 papers
+2026-06-28 16:14:49,633 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:14:50,654 INFO Retrieved 10 PMIDs
+2026-06-28 16:15:08,619 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:15:09,101 INFO Retrieved 10 PMIDs
+2026-06-28 16:42:03,260 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:04,657 INFO Retrieved 5 PMIDs
+2026-06-28 16:42:05,458 INFO Searching Europe PMC: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:06,812 INFO Europe PMC returned 5 papers
+2026-06-28 16:42:06,812 INFO Searching OpenAlex: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:09,349 INFO OpenAlex returned 5 papers
+2026-06-28 16:42:09,349 INFO Searching CrossRef: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:11,034 INFO CrossRef returned 5 papers
+2026-06-28 16:42:11,034 INFO Querying PubMed for: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:11,034 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:12,039 INFO Retrieved 3 PMIDs
+2026-06-28 16:42:13,359 INFO PubMed returned 3 papers
+2026-06-28 16:42:13,359 INFO Querying PubMed for: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:13,359 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:13,788 INFO Retrieved 5 PMIDs
+2026-06-28 16:42:14,531 INFO PubMed returned 5 papers
+2026-06-28 16:42:14,531 INFO Querying EuropePMC for: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:14,531 INFO Searching Europe PMC: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:15,613 INFO Europe PMC returned 5 papers
+2026-06-28 16:42:15,614 INFO EuropePMC returned 5 papers
+2026-06-28 16:42:15,614 INFO Querying OpenAlex for: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:15,614 INFO Searching OpenAlex: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:17,413 INFO OpenAlex returned 5 papers
+2026-06-28 16:42:17,413 INFO OpenAlex returned 5 papers
+2026-06-28 16:42:17,413 INFO Querying CrossRef for: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:17,413 INFO Searching CrossRef: diabetic retinopathy artificial intelligence
+2026-06-28 16:42:18,766 INFO CrossRef returned 5 papers
+2026-06-28 16:42:18,767 INFO CrossRef returned 5 papers
+2026-06-28 16:42:18,885 INFO Searching PubMed: xyzzy123456789nonsensetermthatmatchesnothing
+2026-06-28 16:42:20,065 INFO Retrieved 0 PMIDs
+2026-06-28 16:43:53,366 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:43:54,412 INFO Retrieved 5 PMIDs
+2026-06-28 16:43:55,683 INFO Searching Europe PMC: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:01,736 INFO Europe PMC returned 5 papers
+2026-06-28 16:44:01,748 INFO Searching OpenAlex: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:03,582 INFO OpenAlex returned 5 papers
+2026-06-28 16:44:03,584 INFO Searching CrossRef: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:06,225 INFO CrossRef returned 5 papers
+2026-06-28 16:44:06,236 INFO Querying PubMed for: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:06,236 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:07,299 INFO Retrieved 3 PMIDs
+2026-06-28 16:44:09,115 INFO PubMed returned 3 papers
+2026-06-28 16:44:09,115 INFO Querying PubMed for: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:09,115 INFO Searching PubMed: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:10,096 INFO Retrieved 5 PMIDs
+2026-06-28 16:44:10,872 INFO PubMed returned 5 papers
+2026-06-28 16:44:10,872 INFO Querying EuropePMC for: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:10,872 INFO Searching Europe PMC: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:11,765 INFO Europe PMC returned 5 papers
+2026-06-28 16:44:11,767 INFO EuropePMC returned 5 papers
+2026-06-28 16:44:11,767 INFO Querying OpenAlex for: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:11,767 INFO Searching OpenAlex: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:13,710 INFO OpenAlex returned 5 papers
+2026-06-28 16:44:13,712 INFO OpenAlex returned 5 papers
+2026-06-28 16:44:13,712 INFO Querying CrossRef for: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:13,712 INFO Searching CrossRef: diabetic retinopathy artificial intelligence
+2026-06-28 16:44:15,330 INFO CrossRef returned 5 papers
+2026-06-28 16:44:15,332 INFO CrossRef returned 5 papers
+2026-06-28 16:44:15,370 INFO Searching PubMed: xyzzy123456789nonsensetermthatmatchesnothing
+2026-06-28 16:44:15,781 INFO Retrieved 0 PMIDs

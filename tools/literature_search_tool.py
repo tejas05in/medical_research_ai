@@ -5,6 +5,7 @@ from typing import Type
 from services.literature_engine import LiteratureSearchEngine
 from database import ResearchDatabase
 from utils.exporters import PaperExporter
+from utils.logger import logger
 
 
 class LiteratureSearchInput(BaseModel):
@@ -17,36 +18,48 @@ class LiteratureSearchTool(BaseTool):
     name: str = "Literature Search Tool"
 
     description: str = (
-        "Searches PubMed for biomedical literature, "
-        "stores papers in the local research library, "
-        "and exports CSV/Markdown/JSON."
+        "Searches PubMed, Europe PMC, OpenAlex, and CrossRef for biomedical "
+        "literature, stores papers in the local research library, "
+        "and exports results as CSV, Markdown, and JSON."
     )
 
     args_schema: Type[BaseModel] = LiteratureSearchInput
 
     def _run(self, query: str, max_results: int = 20) -> str:
 
-        engine = LiteratureSearchEngine()
+        try:
 
-        db = ResearchDatabase()
+            engine = LiteratureSearchEngine(
+                clients=[
+                    PubMedClient(),
+                    EuropePMCClient(),
+                    OpenAlexClient(),
+                    CrossRefClient(),
+                ]
+            )
 
-        exporter = PaperExporter()
+            db = ResearchDatabase()
 
-        papers = engine.search(query=query, max_results=max_results)
+            exporter = PaperExporter()
 
-        db.insert_many(papers)
+            papers = engine.search(query=query, max_results=max_results)
 
-        db.log_search(
-            query=query, database_name="PubMed", number_of_results=len(papers)
-        )
+            db.insert_many(papers)
 
-        csv_file = exporter.export_csv(papers)
+            source_names = ", ".join(c.source_name for c in engine.clients)
+            db.log_search(
+                query=query, source=source_names, number_of_results=len(papers)
+            )
 
-        md_file = exporter.export_markdown(papers)
+            db.close()
 
-        json_file = exporter.export_json(papers)
+            csv_file = exporter.export_csv(papers)
 
-        return f"""
+            md_file = exporter.export_markdown(papers)
+
+            json_file = exporter.export_json(papers)
+
+            return f"""
                 Search completed successfully.
 
                 Query:
@@ -64,3 +77,9 @@ class LiteratureSearchTool(BaseTool):
                 JSON:
                 {json_file}
                 """
+
+        except Exception as e:
+            logger.error(
+                f"Literature search failed for query '{query}': {e}", exc_info=True
+            )
+            return f"Search failed for query '{query}': {str(e)}"
