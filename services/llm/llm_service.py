@@ -1,18 +1,13 @@
-import os
-
-from dotenv import load_dotenv
-
+from config.llm_config import LLM_PROVIDER
 from .gemini_provider import GeminiProvider
 from .openai_provider import OpenAIProvider
-
-load_dotenv()
 
 
 class LLMService:
 
     def __init__(self):
 
-        provider = os.getenv("LLM_PROVIDER", "gemini").lower()
+        provider = LLM_PROVIDER
 
         providers = {
             "gemini": GeminiProvider,

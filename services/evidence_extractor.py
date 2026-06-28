@@ -1,14 +1,10 @@
 import json
-import os
-
-from dotenv import load_dotenv
 
 from models import Paper
 from models import Evidence
 
+from config.llm_config import GEMINI_MODEL, LLM_PROVIDER, OPENAI_MODEL
 from services.llm.llm_service import LLMService
-
-load_dotenv()
 
 
 class EvidenceExtractor:
@@ -100,14 +96,12 @@ class EvidenceExtractor:
 
         evidence.paper_id = paper_id
 
-        provider = os.getenv("LLM_PROVIDER", "gemini").lower()
+        evidence.llm_provider = LLM_PROVIDER
 
-        evidence.llm_provider = provider
-
-        if provider == "openai":
-            evidence.llm_model = os.getenv("OPENAI_MODEL", "unknown")
-        elif provider == "gemini":
-            evidence.llm_model = os.getenv("GEMINI_MODEL", "unknown")
+        if LLM_PROVIDER == "openai":
+            evidence.llm_model = OPENAI_MODEL
+        elif LLM_PROVIDER == "gemini":
+            evidence.llm_model = GEMINI_MODEL
         else:
             evidence.llm_model = "unknown"
 

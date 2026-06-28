@@ -18,6 +18,7 @@ load_dotenv(PROJECT_ROOT / ".env")
 
 from crewai import Agent, Crew, Process, Task
 
+from config.llm_config import AGENT_SEARCH_LLM
 from tools.literature_search_tool import LiteratureSearchTool
 
 
@@ -55,7 +56,7 @@ def run_literature_search_crew(research_topic: str, max_results: int = 20) -> st
             "for academic and clinical research."
         ),
         tools=[tool],
-        llm="openai/gpt-4.1",
+        llm=AGENT_SEARCH_LLM,
         verbose=True,
     )
 

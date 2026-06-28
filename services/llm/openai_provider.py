@@ -1,22 +1,19 @@
-import os
 from typing import Type
 
-from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
 
+from config.llm_config import OPENAI_API_KEY, OPENAI_MODEL
 from .base_provider import BaseLLMProvider
-
-load_dotenv()
 
 
 class OpenAIProvider(BaseLLMProvider):
 
     def __init__(self):
 
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.client = OpenAI(api_key=OPENAI_API_KEY)
 
-        self.model = os.getenv("OPENAI_MODEL", "gpt-4.1")
+        self.model = OPENAI_MODEL
 
     def structured_output(
         self,

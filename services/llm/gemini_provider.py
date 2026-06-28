@@ -1,22 +1,19 @@
-import os
 from typing import Type
 
-from dotenv import load_dotenv
 from google import genai
 from pydantic import BaseModel
 
+from config.llm_config import GEMINI_API_KEY, GEMINI_MODEL
 from .base_provider import BaseLLMProvider
-
-load_dotenv()
 
 
 class GeminiProvider(BaseLLMProvider):
 
     def __init__(self):
 
-        self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        self.client = genai.Client(api_key=GEMINI_API_KEY)
 
-        self.model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+        self.model = GEMINI_MODEL
 
     def structured_output(
         self,
