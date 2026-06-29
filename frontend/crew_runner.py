@@ -8,18 +8,17 @@ Python API so the crew can be invoked from code rather than the CLI only.
 import sys
 from pathlib import Path
 
+from crewai import Agent, Crew, Process, Task
 from dotenv import load_dotenv
+
+from config.llm_config import AGENT_SEARCH_LLM
+from tools.literature_search_tool import LiteratureSearchTool
 
 # Ensure project root is on sys.path so tool/service imports resolve correctly.
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 load_dotenv(PROJECT_ROOT / ".env")
-
-from crewai import Agent, Crew, Process, Task
-
-from config.llm_config import AGENT_SEARCH_LLM
-from tools.literature_search_tool import LiteratureSearchTool
 
 
 def run_literature_search_crew(research_topic: str, max_results: int = 20) -> str:
