@@ -1,3 +1,4 @@
+import html
 import os
 import re
 from typing import List, Optional
@@ -13,8 +14,22 @@ load_dotenv()
 
 _BASE_URL = "https://api.crossref.org/works"
 
-# CrossRef abstracts are often JATS XML — strip all tags
+# CrossRef titles and abstracts are often JATS XML — strip all tags
 _XML_TAG = re.compile(r"<[^>]+>")
+
+# PubMed-specific query syntax that CrossRef does not understand
+_PUBMED_DATE = re.compile(r"\s+AND\s+\(\d{4}:\d{4}\[PDAT\]\)", re.IGNORECASE)
+_PUBMED_AFFIL = re.compile(r'\s+AND\s+"[^"]*"\[Affiliation\]', re.IGNORECASE)
+_PUBMED_FIELD_TAG = re.compile(r"\[[A-Za-z ]+\]")
+
+# Record types that represent actual publications (not journal/funder metadata)
+_ARTICLE_TYPES = (
+    "journal-article",
+    "proceedings-article",
+    "posted-content",
+    "book-chapter",
+    "report",
+)
 
 # Fields to request (reduces payload and speeds up response)
 _SELECT_FIELDS = ",".join(
@@ -51,15 +66,33 @@ class CrossRefClient(BaseLiteratureClient):
     def source_name(self) -> str:
         return "CrossRef"
 
+    @staticmethod
+    def _clean_query(query: str) -> str:
+        """Strip PubMed-specific operators that CrossRef does not understand."""
+        q = _PUBMED_DATE.sub("", query)
+        q = _PUBMED_AFFIL.sub("", q)
+        q = _PUBMED_FIELD_TAG.sub("", q)
+        return q.strip()
+
     def search(self, query: str, max_results: int = 20) -> List[Paper]:
 
-        logger.info(f"Searching CrossRef: {query}")
+        clean_query = self._clean_query(query)
+        logger.info(f"Searching CrossRef: {clean_query}")
+
+        # Request more rows than needed so that after type-filtering we still
+        # return up to max_results relevant articles.
+        fetch_rows = min(max_results * 3, 1000)
+
+        # Filter to article-type records only so that journal/funder metadata
+        # records (which have no authors or abstracts) are excluded.
+        type_filter = ",".join(f"type:{t}" for t in _ARTICLE_TYPES)
 
         params: dict = {
-            "query": query,
-            "rows": min(max_results, 1000),
+            "query": clean_query,
+            "rows": fetch_rows,
             "sort": "relevance",
             "select": _SELECT_FIELDS,
+            "filter": type_filter,
         }
 
         if self.email:
@@ -72,7 +105,7 @@ class CrossRefClient(BaseLiteratureClient):
 
         items = response.json().get("message", {}).get("items", [])
 
-        papers = [self._parse_item(item) for item in items]
+        papers = [self._parse_item(item) for item in items[:max_results]]
 
         logger.info(f"CrossRef returned {len(papers)} papers")
 
@@ -83,7 +116,8 @@ class CrossRefClient(BaseLiteratureClient):
         doi = (item.get("DOI") or "").strip() or None
 
         title_list = item.get("title") or []
-        title = title_list[0] if title_list else ""
+        title_raw = title_list[0] if title_list else ""
+        title = html.unescape(_XML_TAG.sub("", title_raw)).strip()
 
         abstract_raw = item.get("abstract") or ""
         abstract = _XML_TAG.sub("", abstract_raw).strip()
@@ -119,8 +153,11 @@ class CrossRefClient(BaseLiteratureClient):
         """
         for field in ("published-print", "published-online", "issued", "published"):
             date_parts = (item.get(field) or {}).get("date-parts") or []
-            if date_parts and date_parts[0]:
-                return date_parts[0][0]
+            if date_parts and date_parts[0] and date_parts[0][0] is not None:
+                try:
+                    return int(date_parts[0][0])
+                except (TypeError, ValueError):
+                    continue
         return None
 
     def _parse_authors(self, authors: list) -> List[str]:

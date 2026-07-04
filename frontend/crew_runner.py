@@ -11,7 +11,8 @@ from pathlib import Path
 from crewai import Agent, Crew, Process, Task
 from dotenv import load_dotenv
 
-from config.llm_config import AGENT_SEARCH_LLM
+from config.llm_config import AGENT_EVIDENCE_LLM, AGENT_SEARCH_LLM
+from tools.evidence_extraction_tool import EvidenceExtractionTool
 from tools.literature_search_tool import LiteratureSearchTool
 
 # Ensure project root is on sys.path so tool/service imports resolve correctly.
@@ -91,3 +92,79 @@ def run_literature_search_crew(research_topic: str, max_results: int = 20) -> st
         inputs={"research_topic": research_topic, "max_results": max_results}
     )
     return str(result)
+
+
+def run_evidence_extraction_crew(
+    max_papers: int = -1, delay_seconds: float = 1.5
+) -> str:
+    """
+    Run the medical evidence extraction crew programmatically.
+
+    Args:
+        max_papers:     Maximum number of papers to extract evidence for.
+                        Use -1 to process all papers without a limit.
+        delay_seconds:  Seconds to pause between LLM calls.
+
+    Returns:
+        The crew's final output string.
+    """
+    tool = EvidenceExtractionTool()
+
+    agent = Agent(
+        role="Medical Evidence Extraction Specialist",
+        goal=(
+            "Extract structured clinical evidence from all retrieved biomedical "
+            "articles stored in the research database. For each article, identify "
+            "and record the study design, patient population, sample size, country, "
+            "intervention, comparator, primary and secondary outcomes, key findings, "
+            "limitations, conclusion, and risk of bias."
+        ),
+        backstory=(
+            "You are a seasoned systematic reviewer and clinical epidemiologist with "
+            "deep expertise in evidence-based medicine. You apply rigorous, "
+            "standardised extraction methods to transform raw biomedical abstracts "
+            "into structured, reusable evidence tables suitable for systematic "
+            "reviews and meta-analyses. You never infer missing information and "
+            "always flag uncertainty."
+        ),
+        tools=[tool],
+        llm=AGENT_EVIDENCE_LLM,
+        verbose=True,
+    )
+
+    task = Task(
+        description=(
+            "Use the Evidence Extraction Tool to extract structured clinical evidence "
+            "from biomedical papers stored in the research database.\n\n"
+            "Call the tool with:\n"
+            "  max_papers={max_papers}\n"
+            "  delay_seconds={delay_seconds}\n\n"
+            "The tool will automatically skip papers that already have evidence stored.\n\n"
+            "After the tool completes, report:\n"
+            "- Number of papers processed\n"
+            "- Number skipped (already extracted)\n"
+            "- Number failed\n"
+            "- Paths to the exported CSV, Markdown, and JSON files"
+        ),
+        expected_output=(
+            "A plain-text extraction summary containing:\n"
+            "1. Papers processed count\n"
+            "2. Papers skipped count\n"
+            "3. Papers failed count (with IDs if any)\n"
+            "4. Full file paths for the exported CSV, Markdown, and JSON evidence files"
+        ),
+        agent=agent,
+    )
+
+    crew = Crew(
+        agents=[agent],
+        tasks=[task],
+        process=Process.sequential,
+        verbose=True,
+        memory=False,
+    )
+
+    result = crew.kickoff(
+        inputs={"max_papers": max_papers, "delay_seconds": delay_seconds}
+    )
+    return result.raw

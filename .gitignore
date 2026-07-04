@@ -224,4 +224,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+#logs and outputs
 *.log
+Outputs/*
+database/research_library.db
+
+#claude local
+.claude/* 
